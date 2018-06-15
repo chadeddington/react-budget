@@ -54,7 +54,7 @@ class App extends Component {
         { id: 2,
           name: 'Cell Phones',
           amount: 100,
-          remaining: 100,
+          remaining: 0,
           entries: [
             { description: 'Test',
               amount: 100
@@ -64,10 +64,10 @@ class App extends Component {
         { id: 3,
           name: 'Utilities',
           amount: 250,
-          remaining: 100,
+          remaining: -100,
           entries: [
             { description: 'Test',
-              amount: 100
+              amount: 340
             }
           ]
         },
@@ -97,7 +97,7 @@ class App extends Component {
           remaining: 0,
           entries: [
             { description: 'Test',
-              amount: 100
+              amount: 400
             }
           ]
         }

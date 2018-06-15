@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './BudgetView.css';
-import Entry from '../Entry/Entry';
+import BudgetEntry from '../BudgetEntry/BudgetEntry';
 
 class BudgetView extends Component {
   constructor(props) {
@@ -46,11 +46,11 @@ class BudgetView extends Component {
     const fillPercent = (spent / amount * 100) + '%';
     const spentLabel = 100 - (spent / amount * 100);
 
-    const entries = []
+    const entries = [];
     this.updateCircles(spent, amount);
 
     this.props.budget.entries.forEach(entry => {
-      entries.push(<Entry amount={entry.amount} description={entry.description}/>)
+      entries.push(<BudgetEntry amount={entry.amount} description={entry.description}/>)
     })
 
     return (

@@ -13,7 +13,7 @@ class Routing extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path='/' render={props => (<Overview appState={this.props} />)} />
+        <Route exact path='/' render={props => (<Overview budgets={this.props.appState.budgets} />)} />
         <Route path='/budget/:id' render={({match}) => (<BudgetView budget={this.props.appState.budgets[match.params.id]} budgetId={match.params.id}/>)} />
         <Route path='/details' render={props => (<Details appState={this.props} />)} />
       </Switch>

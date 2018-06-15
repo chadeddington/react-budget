@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Entry.css';
+import './BudgetEntry.css';
 
-class Entry extends Component {
+class BudgetEntry extends Component {
   constructor(props) {
     super(props);
   }
@@ -19,4 +19,4 @@ class Entry extends Component {
   }
 }
 
-export default Entry;
+export default BudgetEntry;

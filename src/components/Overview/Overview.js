@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Overview.css';
+import OverviewEntry from '../OverviewEntry/OverviewEntry';
 
 class Overview extends Component {
   constructor(props) {
@@ -8,9 +9,17 @@ class Overview extends Component {
   }
 
   render() {
+    const entries = [];
+    this.props.budgets.forEach(entry => {
+      let spent = entry.amount - entry.remaining;
+      if (entry.remaining < 0) spent = entry.amount;
+      entries.push(<OverviewEntry name={entry.name} amount={entry.amount} spent={spent}/>)
+    })
+
     return (
-     <div style={{marginTop: '50px'}}>
+     <div className='overview-wrapper'>
       <h1>Overview</h1>
+      {entries}
      </div>
     );
   }
