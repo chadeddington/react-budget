@@ -1,0 +1,111 @@
+.budget-container {
+	max-width: 400px;
+	margin: auto;
+}
+
+.budget-data {
+	background-color: white;
+	padding-bottom: 10px;
+	position: fixed;
+	width: 100%;
+	top: 50px;
+	left: 0px;
+	z-index: 5;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 3px 2px 0 rgba(0,0,0,0.10);
+}
+
+.top-row {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px 0px 10px;
+	max-width: 400px;
+	margin: auto;
+}
+
+.budget-group, .spent-group {
+  display: inline-flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.budget-text, .spent-text {
+	margin-right: 10px;
+}
+
+.available-group {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+	font-weight: bold;
+	font-size: 32px;
+	margin: auto;
+	max-width: 400px;
+}
+
+.available-group span:last-child {
+	flex: 2;
+}
+
+.budget-text, .spent-text, .available-text {
+	opacity: .4;
+}
+
+.big-number {
+  font-size: 58px;
+  margin: 0px;
+  font-weight: lighter;
+}
+
+.sub-text {
+  font-size: 18px;
+}
+
+.graph-container {
+	display: flex;
+	justify-content: center;
+}
+
+.pie-svg {
+  transform: rotate(-90deg);
+  margin-top: 150px;
+}
+
+circle {
+	fill: #F9F4F4;;
+  stroke-width: 20;
+  stroke-dasharray: 0 502;
+}
+
+#addIcon {
+	position: fixed;
+	top: 150px;
+  right: calc(50% - 150px);
+}
+
+#upperhalf {
+	fill: rgba(0,0,0,0);
+	stroke: url(#linear);
+	stroke-dasharray: 0 502;
+	transition: stroke-dasharray .8s ease;
+	transition-delay: .2s;
+}
+
+#lowerhalf {
+	fill: rgba(0,0,0,0);
+  stroke: lightgreen;
+  transition: stroke-dasharray .8s ease;
+}
+
+#emptyspace {
+	stroke: lightgrey;
+	stroke-dasharray: 502 502;
+}
+
+.spent {
+	position: absolute;
+	font-size: 24px;
+	top: 236px;
+	font-weight: lighter;
+}

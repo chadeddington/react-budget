@@ -1,0 +1,96 @@
+nav {
+  height: 50px;
+  background-color: #45A46D;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.35), 0 3px 2px 0 rgba(0,0,0,0.18);
+  position: fixed;
+  width: 100%;
+  z-index: 6;
+}
+
+aside.side-menu {
+  position: absolute;
+  left: -300px;
+  top: 50px;
+  width: 300px;
+  height: calc(100vh - 50px);
+  background-color: #B7EACD;
+  outline: none;
+  z-index: 1;
+  overflow: scroll;
+}
+
+.show-menu {
+  transform: translate(300px);
+  transition: transform .3s;
+  transition-timing-function: ease-out;
+}
+
+.hide-menu {
+  transform: translate(-300px);
+  transition: transform .3s;
+  transition-timing-function: ease-in;
+}
+
+.budget-name {
+  margin-top: 0px;
+  position: relative;
+  top: 10px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.budget-link {
+  text-align: left;
+  border-bottom: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.home-link {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: ;
+  border-top: 1px solid lightgrey;
+  margin-top: 25px;
+  margin-bottom: 35px
+}
+
+.menu-icon {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.menu-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.new-budget-input {
+  padding: 5px;
+}
+
+.submit-btn {
+  color: white;
+  background-color: #4DACF0;
+  padding: 6px;
+}
+
+.new-budget-form {
+  margin: 20px 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+}
+
+#editIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
