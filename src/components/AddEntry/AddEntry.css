@@ -1,0 +1,45 @@
+.dialog-overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1001;
+}
+
+.dialog-container {
+  width: 300px;
+  height: 225px;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 1;
+  z-index: 1005;
+}
+
+.dialog-container input, .dialog-container button {
+  margin: 10px;
+  padding: 5px;
+  outline: none;
+}
+.dialog-container input {
+  border: none;
+  border-bottom: 1px solid #d4d4d4;
+}
+.dialog-container input:focus {
+  border-bottom: 2px solid #d4d4d4;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.entry-btn {
+  color: white;
+  background-color: #45A46D;
+  border-radius: 5px;
+  font-size: 16pt;
+}

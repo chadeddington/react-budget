@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './BudgetView.css';
 import BudgetEntry from '../BudgetEntry/BudgetEntry';
+import AddEntry from '../AddEntry/AddEntry';
 
 class BudgetView extends Component {
   constructor(props) {
@@ -35,7 +36,6 @@ class BudgetView extends Component {
     });
     document.dispatchEvent(event);
   }
-
 
   render() {
     console.log('budget', this.props);
@@ -82,9 +82,7 @@ class BudgetView extends Component {
             <circle id='upperhalf' r="60" cx="100" cy="100" stroke-dasharray></circle>
             <circle id='lowerhalf' r="60" cx="100" cy="100"></circle>
           </svg>
-          <svg id='addIcon' width="58" height="58" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M30 0C13.44 0 0 13.44 0 30C0 46.56 13.44 60 30 60C46.56 60 60 46.56 60 30C60 13.44 46.56 0 30 0ZM45 33H33V45H27V33H15V27H27V15H33V27H45V33Z" transform="translate(6 6)" fill="#27AE60"/>
-          </svg>
+          <AddEntry dialogLabel="Entry" />
           <span className='spent'>
             {fillPercent}
           </span>
