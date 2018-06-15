@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './Budget.css';
+import './BudgetView.css';
 import Entry from '../Entry/Entry';
 
-class Budget extends Component {
+class BudgetView extends Component {
   constructor(props) {
     super(props);
     this.find = document.querySelector.bind(document);
@@ -95,4 +95,4 @@ class Budget extends Component {
   }
 }
 
-export default Budget;
+export default BudgetView;

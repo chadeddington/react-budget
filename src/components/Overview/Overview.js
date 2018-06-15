@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import './Home.css';
+import './Overview.css';
 
-class Home extends Component {
+class Overview extends Component {
   constructor(props) {
     super(props);
-    console.log('home', props);
+    console.log('Overview', props);
   }
 
   render() {
     return (
      <div style={{marginTop: '50px'}}>
-      <h1>Home</h1>
+      <h1>Overview</h1>
      </div>
     );
   }
 }
 
-export default Home;
+export default Overview;
