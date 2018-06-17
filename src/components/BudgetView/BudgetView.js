@@ -7,6 +7,7 @@ class BudgetView extends Component {
   constructor(props) {
     super(props);
     this.find = document.querySelector.bind(document);
+    this.state = {entries: []};
   }
 
   updateCircles(spent, budgeted) {
@@ -36,6 +37,20 @@ class BudgetView extends Component {
     });
     document.dispatchEvent(event);
   }
+  componentDidMount() {
+    let entries = this.state.entries;
+    this.props.budget.entries.forEach(entry => {
+      entries.push(<BudgetEntry amount={entry.amount} description={entry.description}/>)
+    })
+    this.setState({entries: entries});
+  }
+
+  handleSubmission(result) {
+    console.log('result', result);
+    let entries = [].concat(this.state.entries);
+    entries.push(<BudgetEntry amount={result.value} description={result.label}/>);
+    this.setState({entries: entries});
+  }
 
   render() {
     console.log('budget', this.props);
@@ -46,12 +61,7 @@ class BudgetView extends Component {
     const fillPercent = (spent / amount * 100) + '%';
     const spentLabel = 100 - (spent / amount * 100);
 
-    const entries = [];
     this.updateCircles(spent, amount);
-
-    this.props.budget.entries.forEach(entry => {
-      entries.push(<BudgetEntry amount={entry.amount} description={entry.description}/>)
-    })
 
     return (
       <div className='budget-container'>
@@ -82,12 +92,12 @@ class BudgetView extends Component {
             <circle id='upperhalf' r="60" cx="100" cy="100" stroke-dasharray></circle>
             <circle id='lowerhalf' r="60" cx="100" cy="100"></circle>
           </svg>
-          <AddEntry dialogLabel="Entry" />
+          <AddEntry dialogLabel="Entry" handleSubmission={this.handleSubmission.bind(this)}/>
           <span className='spent'>
             {fillPercent}
           </span>
         </div>
-        {entries}
+        {this.state.entries}
       </div>
     );
   }

@@ -7,6 +7,11 @@ class AddEntry extends Component {
     this.state = {showDialog: false};
   }
 
+  handleClick() {
+    this.props.handleSubmission({label: this.state.label, value: this.state.value});
+    this.setState({showDialog: false});
+  }
+
   render() {
     return (
       <div>  
@@ -17,9 +22,9 @@ class AddEntry extends Component {
           <div onClick={() => this.setState({showDialog: false})} className='dialog-overlay' />      
           <div className='dialog-container flex-column'>
             <h2>Add {this.props.dialogLabel}</h2>  
-            <input placeholder="Label" />
-            <input placeholder="Value"/>
-            <button className="entry-btn">Add</button>
+            <input placeholder="Label" onChange={(e) => this.setState({label: e.target.value})}/>
+            <input placeholder="Value" onChange={(e) => this.setState({value: e.target.value})}/>
+            <button className="entry-btn" onClick={this.handleClick.bind(this)}>Add</button>
           </div>
         </div>
       </div>
